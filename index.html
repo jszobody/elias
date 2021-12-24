@@ -21,23 +21,64 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
+#image {
+  width: 640px;
+  height: 480px;
+  transition: background 0.5s ease;
+}
 -->
 </style>
+<script>
+var i = 0;
+var image;
+var timer;
+
+window.addEventListener('DOMContentLoaded', function() {
+  image = document.getElementById('image');
+  timer = setInterval(advance, 8000);
+  advance();
+});
+
+function advance() {
+  image.style.backgroundImage = "url(" + "gallery/album1/large/" + (i % 9 + 1) + ".jpg" + ")";
+  i++;
+}
+
+function select(selected) {
+  i = selected - 1;
+  advance();
+  clearInterval(timer);
+}
+
+</script>
 </head>
 
 <body>
-<table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="850" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td height="78" colspan="2">&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td colspan="2" valign="top"><h1>Elias Addison Szobody </h1></td>
-    <td width="550" rowspan="2" valign="top" bgcolor="#000000"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="550" height="437">
-        <param name="movie" value="slideshow.swf" />
-        <param name="quality" value="high" />
-        <embed src="slideshow.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="550" height="437"></embed>
-    </object></td>
+    <td rowspan="2" valign="top">
+      <img id="image"/>
+      
+      <table cellspacing="0" cellpadding="0" width="100%" style="margin-top: 5px">
+        <tr>
+          <td><a href="javascript:select(1)"><img src="gallery/album1/thumbs/1.jpg"/></a></td>
+          <td><a href="javascript:select(2)"><img src="gallery/album1/thumbs/2.jpg"/></a></td>
+          <td><a href="javascript:select(3)"><img src="gallery/album1/thumbs/3.jpg"/></a></td>
+          <td><a href="javascript:select(4)"><img src="gallery/album1/thumbs/4.jpg"/></a></td>
+          <td><a href="javascript:select(5)"><img src="gallery/album1/thumbs/5.jpg"/></a></td>
+          <td><a href="javascript:select(6)"><img src="gallery/album1/thumbs/6.jpg"/></a></td>
+          <td><a href="javascript:select(7)"><img src="gallery/album1/thumbs/7.jpg"/></a></td>
+          <td><a href="javascript:select(8)"><img src="gallery/album1/thumbs/8.jpg"/></a></td>
+          <td><a href="javascript:select(9)"><img src="gallery/album1/thumbs/9.jpg"/></a></td>
+        </tr>
+      </table>
+      
+    </td>
   </tr>
   <tr>
     <td width="70" valign="top"><p>date<br />
@@ -52,16 +93,6 @@ h1 {
   </tr>
 </table>
 <div style="display: none">
-<!-- Start of StatCounter Code -->
-<script type="text/javascript" language="javascript">
-var sc_project=1319758; 
-var sc_invisible=1; 
-var sc_partition=9; 
-var sc_security="d64b3292"; 
-</script>
-
-<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c10.statcounter.com/counter.php?sc_project=1319758&amp;java=0&amp;security=d64b3292&amp;invisible=1" alt="how to add a hit counter to a website" border="0"></a> </noscript>
-<!-- End of StatCounter Code -->
 </div>
 </body>
 </html>
